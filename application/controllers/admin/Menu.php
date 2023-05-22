@@ -196,7 +196,7 @@ class Menu extends CI_Controller {
     public function delete($id){
 
         $this->load->model('Menu_model');
-        $dish = $this->Menu_model->getSingleDish($id);
+        $dish = $this->Menu_model->getSingleDish($idmenu);
 
         if(empty($dish)) {
             $this->session->set_flashdata('error', 'dish not found');
