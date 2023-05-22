@@ -55,14 +55,7 @@ class Home extends CI_Controller {
         echo "user";
     }
 
-    public function ordersReport() {
-        $resReport = $this->Admin_model->getResReport();
-        $data['resReport'] = $resReport;
-
-        $this->load->view('admin/partials/header');
-        $this->load->view('admin/reports/res_report', $data);
-        $this->load->view('admin/partials/footer');
-    }
+    
     public function generate_pdf($id) {
         //load pdf library
         $this->load->library('Pdf');
