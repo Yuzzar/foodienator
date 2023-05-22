@@ -216,5 +216,5 @@ class Menu extends CI_Controller {
         $this->session->set_flashdata('dish_success', 'dish deleted successfully');
         redirect(base_url().'admin/menu/index');
 
-    }
+    }
 }
