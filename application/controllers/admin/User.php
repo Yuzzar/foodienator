@@ -116,6 +116,6 @@ class User extends CI_Controller {
         $this->session->set_flashdata('success', 'User deleted successfully');
         redirect(base_url().'admin/user/index');
 
-    }
+    }
 
 }

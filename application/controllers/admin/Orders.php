@@ -64,6 +64,6 @@ class Orders extends CI_Controller {
 
         $this->session->set_flashdata('success', 'Order deleted successfully');
         redirect(base_url().'admin/orders/index');
-    }
+    }
 
 }
