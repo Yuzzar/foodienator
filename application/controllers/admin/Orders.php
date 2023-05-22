@@ -30,9 +30,27 @@ class Orders extends CI_Controller {
         $this->load->view('admin/orders/processOrder', $data);
         $this->load->view('admin/partials/footer');
     }
-
     
+    public function updateOrder($id) {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('status','Status', 'trim|required');
 
+        if($this->form_validation->run() == true) {
+
+            $order['status'] = $this->input->post('status');
+            $orderData['success-date'] = date('Y-m-d H:i:s', now());
+            $this->Order_model->update($id, $order);
+            
+            $this->session->set_flashdata('success', 'Order processed successfully');
+            redirect(base_url().'admin/orders/index');
+
+        } else {
+            $order = $this->Order_model->getAllOrders();
+            $data['orders'] = $order;
+        }
+    }
+
+ 
     public function deleteOrder($id) {
         $order = $this->Order_model->getAllOrders();
         $data['orders'] = $order;
