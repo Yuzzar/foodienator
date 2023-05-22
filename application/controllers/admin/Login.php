@@ -39,5 +39,11 @@ class Login extends CI_Controller {
             $this->load->view('admin/login');
          }
     }
+    
+    public function logout() {
+        $this->session->unset_userdata('admin');
+        redirect(base_url().'admin/login/index');
+    }
+}
 
    
