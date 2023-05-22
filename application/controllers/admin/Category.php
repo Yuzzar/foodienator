@@ -83,5 +83,5 @@ class Category extends CI_Controller {
 
         $this->session->set_flashdata('cat_success', 'Category deleted successfully');
         redirect(base_url().'admin/category/index');
-    }
+    }
 }
