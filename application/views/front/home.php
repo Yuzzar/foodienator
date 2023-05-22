@@ -111,12 +111,9 @@
             <h2>Terhubung Dengan Kami</h2>
         </div>
         <div class="col-12 social padding">
-            <a href=""><i class="fab fa-facebook"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fab fa-google-plus-g"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-youtube"></i></a>
-        </div>
+  <a href="https://www.facebook.com/wentym"><i class="fab fa-facebook"></i></a>
+  <a href="https://instagram.com/meliacakescianjur?igshid=MzRlODBiNWFlZA=="><i class="fab fa-instagram"></i></a>
+</div>   
     </div>
 </div>
 <hr class="my-4">
