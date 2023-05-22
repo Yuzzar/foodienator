@@ -14,8 +14,8 @@
 
 <body>
     <div class="conatiner">
-        <h1 class="text-center mt-3">Admin Panel</h1>
-        <p class="text-center mb-4">Please Login To Continue</p>
+        <h1 class="text-center mt-3">"Admin Panel"</h1>
+        <p class="text-center mb-4">"Please Login To Continue"</p>
         <?php
         if (!empty($this->session->flashdata('msg'))) {
           echo "<div class='alert alert-danger mb-3 mx-auto' style='width:50%'>".$this->session->flashdata('msg')."</div>";
@@ -35,7 +35,7 @@
                 <span></span>
             </div>
             <?php echo form_error('password'); ?>
-            <button type="submit" class="btn btn-info btn-block mb-2">Login</button>
+            <button type="submit" class="btn btn-info btn-block mb-2">LOGIN</button>
         </form>
     </div>
     <script>
