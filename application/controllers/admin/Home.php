@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit ('No direct script access allowed');
 
-require_once APPPATH . 'controllers/admin/Home.php';
+
 
 class Home extends CI_Controller {
 
@@ -85,7 +85,7 @@ class Home extends CI_Controller {
         // set default monospaced font
         $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
     
-        // set marginas
+        // set margins
         $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
         $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
         $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
@@ -142,6 +142,6 @@ class Home extends CI_Controller {
         $pdf->lastPage();
     
         //Close and output PDF document
-        $pdf->Output(md5(time()).'.pdf', 'I');
-    }
+        $pdf->Output(md5(time()).'.pdf', 'I');
+    }
 }
