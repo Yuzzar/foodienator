@@ -233,28 +233,5 @@ class Store extends CI_Controller {
 
     }
 
-    public function delete($id){
-
-        $this->load->model('Store_model');
-        $store = $this->Store_model->getStore($id);
-
-        if(empty($store)) {
-            $this->session->set_flashdata('error', 'restaurant not found');
-            redirect(base_url().'admin/store');
-        }
-
-        if (file_exists('./public/uploads/restaurant/'.$store['img'])) {
-            unlink('./public/uploads/restaurant/'.$store['img']);
-        }
-
-        if(file_exists('./public/uploads/restaurant/thumb/'.$store['img'])) {
-            unlink('./public/uploads/restaurant/thumb/'.$store['img']);
-        }
-
-        $this->Store_model->delete($id);
-
-        $this->session->set_flashdata('res_success', 'Store deleted successfully');
-        redirect(base_url().'admin/store/index');
-
-    }
+    
 }
