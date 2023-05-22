@@ -40,10 +40,14 @@ class Store extends CI_Controller {
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
         $this->form_validation->set_rules('res_name', 'Restaurant name','trim|required');
+        $this->form_validation->set_rules('email', 'Email','trim|required');
+        $this->form_validation->set_rules('phone', 'Phone','trim|required');
+        $this->form_validation->set_rules('url', 'URL','trim|required');
         $this->form_validation->set_rules('o_hr', 'o_hr','trim|required');
         $this->form_validation->set_rules('c_hr', 'c_hr','trim|required');
         $this->form_validation->set_rules('o_days', 'o_days','trim|required');
         $this->form_validation->set_rules('c_name', 'category','trim|required');
+        $this->form_validation->set_rules('address', 'Address','trim|required');
 
         if($this->form_validation->run() == true) {
 
@@ -63,14 +67,18 @@ class Store extends CI_Controller {
 
                     $formArray['img'] = $data['file_name'];
                     $formArray['name'] = $this->input->post('res_name');
+                    $formArray['email'] = $this->input->post('email');
+                    $formArray['phone'] = $this->input->post('phone');
+                    $formArray['url'] = $this->input->post('url');
                     $formArray['o_hr'] = $this->input->post('o_hr');
                     $formArray['c_hr'] = $this->input->post('c_hr');
                     $formArray['o_days'] = $this->input->post('o_days');
                     $formArray['c_id'] = $this->input->post('c_name');
+                    $formArray['address'] = $this->input->post('address');
         
                     $this->Store_model->create($formArray);
         
-                    $this->session->set_flashdata('res_success', 'Categories cake added successfully');
+                    $this->session->set_flashdata('res_success', 'Restaurant added successfully');
                     redirect(base_url(). 'admin/store/index');
 
                 } else {
@@ -87,15 +95,18 @@ class Store extends CI_Controller {
             } else {
                 //if no image is selcted we will add res data without image
                 $formArray['name'] = $this->input->post('res_name');
+                $formArray['email'] = $this->input->post('email');
+                $formArray['phone'] = $this->input->post('phone');
+                $formArray['url'] = $this->input->post('url');
                 $formArray['o_hr'] = $this->input->post('o_hr');
                 $formArray['c_hr'] = $this->input->post('c_hr');
                 $formArray['o_days'] = $this->input->post('o_days');
                 $formArray['c_id'] = $this->input->post('c_name');
-            
+                $formArray['address'] = $this->input->post('address');
     
                 $this->Store_model->create($formArray);
     
-                $this->session->set_flashdata('res_success', 'Categori Cake added successfully');
+                $this->session->set_flashdata('res_success', 'Restaurant added successfully');
                 redirect(base_url(). 'admin/store/index');
             }
 
@@ -130,11 +141,14 @@ class Store extends CI_Controller {
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<p class="invalid-feedback">','</p>');
         $this->form_validation->set_rules('res_name', 'Restaurant name','trim|required');
+        $this->form_validation->set_rules('email', 'Email','trim|required');
+        $this->form_validation->set_rules('phone', 'Phone','trim|required');
+        $this->form_validation->set_rules('url', 'URL','trim|required');
         $this->form_validation->set_rules('o_hr', 'o_hr','trim|required');
         $this->form_validation->set_rules('c_hr', 'c_hr','trim|required');
         $this->form_validation->set_rules('o_days', 'o_days','trim|required');
         $this->form_validation->set_rules('c_name', 'category','trim|required');
-       
+        $this->form_validation->set_rules('address', 'Address','trim|required');
 
         if($this->form_validation->run() == true) {
 
@@ -153,12 +167,14 @@ class Store extends CI_Controller {
 
                     $formArray['img'] = $data['file_name'];
                     $formArray['name'] = $this->input->post('res_name');
-            
+                    $formArray['email'] = $this->input->post('email');
+                    $formArray['phone'] = $this->input->post('phone');
+                    $formArray['url'] = $this->input->post('url');
                     $formArray['o_hr'] = $this->input->post('o_hr');
                     $formArray['c_hr'] = $this->input->post('c_hr');
                     $formArray['o_days'] = $this->input->post('o_days');
                     $formArray['c_id'] = $this->input->post('c_name');
-               
+                    $formArray['address'] = $this->input->post('address');
         
                     $this->Store_model->update($id, $formArray);
         
@@ -191,10 +207,14 @@ class Store extends CI_Controller {
 
                 //if no image is selcted we will add res data without image
                 $formArray['name'] = $this->input->post('res_name');
+                $formArray['email'] = $this->input->post('email');
+                $formArray['phone'] = $this->input->post('phone');
+                $formArray['url'] = $this->input->post('url');
                 $formArray['o_hr'] = $this->input->post('o_hr');
                 $formArray['c_hr'] = $this->input->post('c_hr');
                 $formArray['o_days'] = $this->input->post('o_days');
                 $formArray['c_id'] = $this->input->post('c_name');
+                $formArray['address'] = $this->input->post('address');
     
                 $this->Store_model->update($id ,$formArray);
     
@@ -233,8 +253,8 @@ class Store extends CI_Controller {
 
         $this->Store_model->delete($id);
 
-        $this->session->set_flashdata('res_success', 'Categories Cake deleted successfully');
+        $this->session->set_flashdata('res_success', 'Store deleted successfully');
         redirect(base_url().'admin/store/index');
 
-    }
+    }
 }
