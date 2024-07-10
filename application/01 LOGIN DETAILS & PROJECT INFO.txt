@@ -2,7 +2,7 @@
 
 **Database Name: foodorderigniter**
 
-**Developed by Rahul Shewale**
+
 
 **Recommended PHP Version 7.4.12**
 
